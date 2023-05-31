@@ -23,13 +23,13 @@ const options = {
         Notify.failure('Please choose a date in the future');
     }
     if (selectedDates[0] > new Date()) {
-              refs.start.disabled = false;
+              refs.startBtn.disabled = false;
             }
 
     refs.startBtn.addEventListener('click', () => {
       intervalId = setInterval(() => {
         const diff = selectedDates[0] - Date.now();
-        refs.start.disabled = false;
+        refs.startBtn.disabled = true;
         if (diff <= 1000) {
           clearInterval(intervalId);
         }
