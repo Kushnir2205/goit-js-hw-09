@@ -29,6 +29,7 @@ const options = {
     refs.startBtn.addEventListener('click', () => {
       intervalId = setInterval(() => {
         const diff = selectedDates[0] - Date.now();
+        refs.start.disabled = false;
         if (diff <= 1000) {
           clearInterval(intervalId);
         }
